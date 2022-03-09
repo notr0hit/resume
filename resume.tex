@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{xifthen}
+\hypersetup{breaklinks=true,%
+pagecolor=white,%
+colorlinks=true,%
+linkcolor=cyan,%
+urlcolor=MyDarkBlue}
+\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{1em}
+\newlength{\secsep}
+\setlength{\secsep}{0.1cm}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+\definecolor{contactgray}{gray}{0.2}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-6pt} \hrulefill \\ \vspace*{-15pt}}
+\newcommand{\name}[1]{\begin{center}\textsc{\Large#1}\\\end{center}}
+\newcommand{\program}[1]{\begin{center}\textsc{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\normalsize#1}\end{center}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{0pt}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.2em}}
+
+\newenvironment{resume_header}{}{\vspace{0pt}}
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  \textsc{\color{blue}\large#1}
+  \lineunder
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+% Variable 1: Date; Variable 2: Subsection name.
+\newenvironment{resume_subsection}[2]{
+  \textbf{\color{BlueViolet}#2} \hfill {\normalsize (#1)} \hspace{-5em}
+  \begin{tabbedsection}{0.5\secsep}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+% If you only had a single role, put your role as the second value otherwise use the resume_position environment inside of this environment.
+% Variable 1: Company name; Variable 2: Role/title; Variable 3: Years worked.
+\newenvironment{resume_employer}[3]{
+  \vspace{\secsep}
+  \textbf{\color{BlueViolet}#1} \hfill {\normalsize (#3)} \hspace{-5em}
+  \begin{tabbedsection}{0pt}
+    \ifthenelse{\isempty{#2}}%
+        {}%
+        {\textbf{#2}}%
+}{\end{tabbedsection}}
+
+% Variable 1: Role/title; Variable 2: Years holding that role.
+\newenvironment{resume_position}[2]{
+    \vspace{\secsep}
+    \textbf{#1} \hfill {\normalsize (#2)} \hspace{-2.64em}
+    \begin{subitems}
+}{\end{subitems}}
+
+%%%%%%%%%%%%%%%%%%%%
+%     Document     %
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{resume_header}
+\name{Daylam Tayari}
+\contact {
+    \faEnvelope[solid] \, \href{mailto:daylamtayari@tayari.gg}{daylamtayari@tayari.gg}
+    \hspace{1cm} \faGlobe \, \href{https://tayari.gg}{tayari.gg}
+    \hspace{1cm} \faGitlab \, \href{https://git.tayari.gg/tayari/Resume}{git.tayari.gg/tayari}
+    \hspace{1cm} \faLinkedin \, \href{https://www.linkedin.com/in/daylamtayari}{daylamtayari}
+}
+\end{resume_header}
+
+%\begin{resume_section}{Objective}
+%Highly driven student with experience working with a large variety of technologies and enterprise solutions seeking a security internship.
+%\end{resume_section}
+
+\begin{resume_section}{Education}
+  \begin{resume_subsection}{August 2020 - May 2023 [Expected]}{Arizona State University}
+    B.S. Computer Science (Cybersecurity concentration) \hspace{5.05cm} GPA: 3.31\\*
+  \end{resume_subsection}
+\end{resume_section}
+
+\vspace{-3\secsep}
+
+\begin{resume_section}{Relevant Experience}
+    \begin{resume_employer}{Bishop Fox}{Incoming Security Consultant I}{May 2022}
+        \begin{subitems}
+        \item Incoming penetration testing intern at Bishop Fox starting in May 2022.
+        \end{subitems}
+    \end{resume_employer}
+\end{resume_section}
+
+\vspace{2\secsep}
+
+\begin{resume_section}{Skills}
+    \begin{nospacetabbing}
+    \textbf{Languages:} \hspace{5em} \=Java, Python, C++, C, Go, SQL, JavaScript, HTML, CSS.\\*
+    \textbf{Technologies:} \> PostgreSQL, GraphQL, Docker, NodeJS, Metasploit, Burp Suite, Proxmox, TrueNAS.\\*
+    \textbf{Miscellaneous:} \> GNU/Linux, Cloud services (AWS and Oracle), Bash, Git, Latex, Excel, Autodesk Inventor.\\*
+    \textbf{Foreign Languages:} \> Native French speaker, fully bilingual in French \& English.\\*
+    \textbf{Work Authorization:} \> United States green card holder.\\*
+  \end{nospacetabbing}
+\end{resume_section}
+
+\vspace{2\secsep}
+
+\begin{resume_section}{Projects}
+    \begin{resume_subsection}{August 2021 - Present}{Curated ICO}
+        \item After identifying a need in the cryptocurrency space, developing a data aggregation and analysis platform in a coordinated team environment to assist investors in discovering new but trustworthy cryptocurrencies by detecting specific patterns and scoring them accordingly.
+        \item Designed and deployed a PostgreSQL database paired with a correlating GraphQL API in order to store large collections of financial data and allow for their \textbf{retrieval in less than 100ms}.
+        \item Developed an automated data retrieval tool with a \textbf{runtime of 9.5ms} that fetches financial data on cryptocurrencies via APIs and inputs them into a database using a GraphQL API to perform historical analysis.
+    \end{resume_subsection}
+    \vspace{2\secsep}
+    \begin{resume_subsection}{February 2021}{To-Do Export - \faGitlab \hspace{0.01cm} \href{https://git.tayari.gg/tayari/Microsoft-To-Do-Export}{git.tayari.gg/tayari/Microsoft-To-Do-Export}}
+        \item Frustrated by a total lack of any export solutions for the Microsoft To-Do program, devised and developed a custom solution that exports all task lists into a format compatible to be imported directly into other task management applications.
+        \item Developed in Java and utilizes REST APIs to retrieve the task lists which are then converted into the appropriate CSV and JSON formats in order to ensure compatibility with other task management applications.
+    \end{resume_subsection}
+    \vspace{2\secsep}
+    \begin{resume_subsection}{December 2020 - Present}{Twitch Recover - \faGithub \hspace{0.01cm} \href{https://github.com/twitchrecover/twitchrecover}{github.com/twitchrecover/twitchrecover}}
+        \item Following a copyright restriction crisis on a popular live streaming platform, developed a tool that has \textbf{over 100,000+ downloads} that allows users to better manage and recover their video content.
+        \item Built in Java and utilizes REST and GraphQL APIs to retrieve and feed video content to end users.
+        \item \textbf{Resolved hundreds of user tickets}, performing the relevant support and issue remediation.
+    \end{resume_subsection}
+%   \begin{resume_subsection}{October - November 2020}{Shadow Realm Bot}
+%       \begin{subitems}
+%            \item Following the removal of a popular moderation feature, created a livestreaming moderation bot which reimplements that feature allowing content creators to better moderate their communities.
+%           \item Developed a front end in ReactJS utilizing NodeJS packages paired with a SQL database backend.
+%           \item Implemented OAuth Authentication for user authentication paired with an API to retrieve the necessary user data and perform the moderation.
+%       \end{subitems}
+%   \end{resume_subsection}
+%   \vspace{2\secsep}
+%   \begin{resume_subsection}{March 2020 - Present}{Home Network and Security Lab}
+%        \item Continuously advance my skills with enterprise tools and vulnerabilities by \textbf{virtualizing multiple vulnerable environments} and practicing to deploy and configure a large variety of enterprise tools and solutions.
+%        \item Active on TryHackMe, an online platform with labs to practice and enrich my penetration testing skills.
+%    \end{resume_subsection}
+\end{resume_section}
+
+\vspace{2\secsep}
+
+\begin{resume_section}{Associations}
+    \begin{resume_employer}{Devilsec}{}{August 2020 - Present}
+        \begin{subitems}
+            \item Competing in the national Collegiate Cyber Defense Competition completing service requests, performing incident response, hardening Linux machines and maintaining and deploying services.
+        \end{subitems}
+
+        \begin{resume_position}{Vice-President}{2022 - Present}
+            \item Vice-President of ASU's cybersecurity club with over 1,100 members hosting weekly presentations and workshops.
+            \item Built and manage an entire CTF infrastructure which has been used to run numerous CTFs I've helped design.
+        \end{resume_position}
+    \end{resume_employer}
+    \vspace{2\secsep}
+    \begin{resume_subsection}{August 2020 - Present}{ASU Linux User's Group (ASULUG)}
+        \item Member of ASU's Linux User's Group with over 950 members which hosts events about Linux and open source.
+%        \item Assisted numerous students with performing tasks across a variety of Linux distributions and technologies.
+        \item Presented a talk on the Qubes operating system detailing in technical detail it's architecture and components. \href{https://tayari.gg/talks/qubes-technical-introduction/}{\faExternalLinkSquare*}
+    \end{resume_subsection}
+\end{resume_section}
+\end{document}
