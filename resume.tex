@@ -7,7 +7,6 @@
 %------------------------------------------------------------------------------
 
 \documentclass[A4,11pt]{article}
-%\documentclass[letterpaper,11pt]{article} %For use in US
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -21,24 +20,12 @@
 \usepackage{tikz}
 \input{glyphtounicode}
 
-\begin{comment}
-I am by no means a professional when it comes to the CV's/resumes, I have
-received various trainings on how to write a CV and resume from my high 
-school, as well as the Austin College and University of Eastern Finland's
-career counseling departments. As I intend to share my CV as a template, I 
-feel that it is my responsibility to provide explanations of my work.
-\end{comment}
-
-
-%-----FONT OPTIONS-------------------------------------------------------------
-\begin{comment}
-The font of the document will impact not just how readable it is, but how it is
-perceived. In the "The Craft of Scientific Writing" by Michael Alley, shares a
-common fonts for publication as well as their use. I have chosen to use
-Palatino for its legibility, some others are given below. There is far too much
-about typography to discus here. Note: serif fonts have short projecting
-strokes, sans-serif fonts are sans (without) these strokes.
-\end{comment}
+% \usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome}
+\usepackage{graphicx,wrapfig}
+\usepackage{url}
 
 
 % serif
@@ -134,19 +121,25 @@ which heading appropriate for the document you are creating.
 %     % if necessary the picture may be moved by changing the at (coordinates)
 %     % width defines the 'zoom' of the picture
 % \end{tikzpicture}
-\includegraphics[scale=0.05]{bright_photo_image.jpg}
+\includegraphics[scale=0.25]{components/portrait.jpg}
 \hfill\vline\hfill
 \end{minipage}
 \begin{minipage}[c]{0.4\textwidth}
-    \textbf{\Huge \scshape{Rohit Khare}} \\ \vspace{1pt} 
+    \textbf{\Huge \scshape{\hspace{3pt}Rohit Khare}} \\ \vspace{1pt} \\
     % \scshape sets small capital letters, remove if desired
-    \small{+91 8770749004} \\
-    \href{mailto:rohit97528@gmail.com}{\underline{rohit97528@gmail.com}}\\
+    \hspace*{3pt}\small{\faPhone\hspace{2pt}+91 8770749004} \\ 
+    \href{mailto:rohit97528@gmail.com}{\hspace{3pt}\faEnvelope\underline{ rohit97528@gmail.com}} \\
     % Be sure to use a professional *personal* email address
-    \href{https://www.linkedin.com/in/charles-rambo/}{\underline{linkedin.com/in/charles-rambo}} \\
+    \href{https://github.com/notr0hit}{\hspace{3pt}\faGithub \underline{ github.com/notr0hit}} \\
+    % \href{https://www.linkedin.com/in/charles-rambo/}{\underline{linkedin.com/in/charles-rambo}} \\
+     \href{https://codeforces.com/profile/not_rohit}{\hspace{3pt}\includegraphics[scale=0.008]{components/codeforces.jpg} \underline{codeforces.com/not\_rohit}} 
+    
+    \href{https://www.codechef.com/users/not_rohit}{\hspace{3pt}\includegraphics[scale=0.008]{components/codechef.jpg} \underline{codechef.com/not\_rohit}} \\
     % you should adjust you linked in profile name to be professional and recognizable
-    \href{https://github.com/fizixmastr}{\underline{github.com/notr0hit}}
+    
 \end{minipage}
+
+\vspace*{2pt}
 
 % Without picture
 %\begin{center}
@@ -159,223 +152,90 @@ which heading appropriate for the document you are creating.
 %    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
 %\end{center}
 
-
-
-\begin{comment}
-This CV was written for specifically for positions I was applying for in
-academia, and then modified to be a template.
-
-A standard CV is about two pages long where as a resume in the US is one page.
-sections can be added and removed here with this in mind. In my experience, 
-education, and applicable work experience and skills are the most import things
-to include on a resume. For a CV the Europass CV suggests the categories: Work
-Experience, Education and Training, Language Skills, Digital Skills,
-Communication and Interpersonal Skills, Conferences and Seminars, Creative Works
-Driver's License, Hobbies and Interests, Honors and Awards, Management and
-Leadership Skills, Networks and Memberships, Organizational Skills, Projects,
-Publications, Recommendations, Social and Political Activities, Volunteering.
-
-Your goal is to convey a who, what , when, where, why for every item you share. 
-The who is obviously you, but I believe the rest should be done in that order.
-For example below. An employer cares most about the degree held and typically 
-less about the institution or where it is located (This is still good 
-information though). Whatever order you choose be consistent throughout.
-\end{comment}
-
 %-----EDUCATION----------------------------------------------------------------
-\section{Education}
+\section{education}
   \CVSubHeadingListStart
 %    \CVSubheading % Example
 %      {Degree Achieved}{Years of Study}
 %      {Institution of Study}{Where it is located}
     \CVSubheading
-      {{Master of Science $|$ \emph{\small{Photonics}}}}{Aug. 2019 -- May 2021}
-      {University of Eastern Finland}{Joensuu, Finland}
+      {{Maulana Azad National Institute Of Technology, Bhopal}}{\emph{December 2020 - Present}}
+      {B.Tech in Computer Science And Engineering}{CGPA: 8.58}
     \CVSubheading
-      {{Bachelor of Arts $|$ \emph{\small{Major: Physics, Minor: Education}}}}{Aug. 2016 -- May 2018}
-      {Austin College}{Sherman, TX}
+      {{Sanskar Public School, Gwalior}}{\emph{2019-2020}}
+      {12th Grade}{Overall Percentage: 82.6}
     \CVSubheading
-      {Associate of Liberal Sciences}{Aug. 2015 -- May 2016}
-      {North Lake College}{Irving, TX}
+      {{Pragati Vidya Peeth, Gwalior}}{\emph{2017-2018}}
+      {10th Grade}{Overall Percentage: 87.4} \\
   \CVSubHeadingListEnd
 
-%-----WORK EXPERIENCE----------------------------------------------------------
-\begin{comment}
-try to briefly explain what you did and why it is relevant to the position you
-are seeking
-\end{comment}
+\vspace*{3pt}
+% %-----PROJECTS----------------------------------------------------
+% \begin{comment}
+% Ideally the title of the work should speak for what it is. However if you feel
+% like you should explain more about why the project is applicable to this job,
+% use item list as is shown in the work experience section.
+% \end{comment}
 
-\section{Work Experience}
-  \CVSubHeadingListStart
-%    \CVSubheading %Example
-%      {What you did}{When you worked there}
-%      {Who you worked for}{Where they are located}
-%      \CVItemListStart
-%        \CVItem{Why it is important to this employer}
-%      \CVItemListEnd
-    \CVSubheading
-      {Integration Engineering Intern}{June 2018 -- August 2019}
-      {Finisar Corp.}{Sherman, TX}
-      \CVItemListStart
-        \CVItem{Worked in ISO 4 cleanroom developing applications to improve efficiency and creating specs}
-        \CVItem{Employed metrology and microscopy for failure analysis and developing process for wet etching}
-        \CVItem{Member of Emergency Response Team}
-      \CVItemListEnd
-    \CVSubheading
-      {Laboratory Assistant}{January 2016 -- July 2016}
-      {North Lake College}{Irving, TX}
-      \CVItemListStart
-        \CVItem{Inventoried and maintained Physics Department lab equipment}
-        \CVItem{Physics tutoring}
-    \CVItemListEnd
-    \CVSubheading
-      {Assistant Manager}{December 2006 -- August 2015}
-      {Sun \& Ski Sports}{Austin, TX}
-      \CVItemListStart
-        \CVItem{Led a team of 20+ employees}
-        \CVItem{Ran social media, as well as all grassroots marketing}
-      \CVItemListEnd
-  \CVSubHeadingListEnd
+\section{technical skills}
+ \begin{itemize}[leftmargin=0.5cm, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: C, C++, Python, Java} \\
+     \textbf{Tools}{: Vim, Git}
+    }}
+ \end{itemize}
 
-%-----PROJECTS AND RESEARCH----------------------------------------------------
-\begin{comment}
-Ideally the title of the work should speak for what it is. However if you feel
-like you should explain more about why the project is applicable to this job,
-use item list as is shown in the work experience section.
-\end{comment}
+\vspace{1pt}
 
-\section{Projects and Research}
+\section{projects}
   \CVSubHeadingListStart
 %    \CVSubheading
 %      {Title of Work}{When it was done}
 %      {Institution you worked with}{unused}
     \CVSubheading
-      {{Surface Plasmon Propagation in the Kretschmann-Raether Configuration} $|$ \emph{\small{Python}}}{Fall 2020}
-      {University of Eastern Finland}{}
+      {\href{https://github.com/notr0hit/website-summarizer/tree/main}{\underline{Website Summarizer}}}{}
+      {A GUI based application written in Python, creates summary of website's text from its URL address. \vspace{3pt}}{}
+      
     \CVSubheading
-      {{Simulation of Vector Beams Through High Numerical Aperture Lens} $|$ \emph{\small{Python}}}{Fall 2020}
-      {University of Eastern Finland}{}
-    \CVSubheading
-      {Characterization of the Flame-S Spectrometer for Spectral Imaging Research}{Spring 2020}
-      {University of Eastern Finland}{}
-    \CVSubheading
-      {{Free Form Lens Systems for 3D Printing} $|$ \emph{\small{MATLAB, OpTaliX}}}{Spring 2019}
-      {University of Eastern Finland}{}
-    \CVSubheading
-      {Procedures for Plating and Wet-Etching in III-V Semiconductor Devices}{Summer 2019}
-      {Finisar Corp.}{}
-    \CVSubheading
-      {Photo-Filter Characterization for Photometric Identification of Be Stars}{Fall 2017}
-      {Austin College}{}
-    \CVSubheading
-      {Improved Calibrating Equations for Volumetric Soil Moisture Measurement}{Spring 2017}
-      {Austin College}{}
-    \CVSubheading
-      {{Product Design, and Manufacturing Using 3D Printing} $|$ \emph{\small{Autodesk 123D}}}{Fall 2016}
-      {Austin College}{}
-  \CVSubHeadingListEnd
+      {\href{https://github.com/notr0hit/twitch-chat-json-to-srt}{\underline{Twitch Chat Subtitle}}}{}
+      {Python script which Shows Twitch chat messages as subtitles when watching \href{https://www.twitch.tv}{\underline{Twitch}} Videos in Video Player.\\
+      Queue data structure was used to implement the algorithm for this script. \vspace{3pt}}{} 
+      
+      \CVSubheading
+      {\href{https://github.com/notr0hit/wordle-solver-bot}{\underline{Wordle Solver}}}{}
+      {C++ Application which solves the famous game \href{https://www.nytimes.com/games/wordle/index.html}{\underline{Wordle}} {(by New York Times).}}{}
+  \CVSubHeadingListEnd 
 
-%-----CONFERENCES AND PRESENTATIONS--------------------------------------------
-\begin{comment}
-Again the title should have already been enough, but if it is necessary to add
-descriptions maintain the consistency from prior sections
-\end{comment}
+\vspace*{3pt}
 
-\section{Conferences and Presentations}
-  \CVSubHeadingListStart
-%    \CVSubheading % Example
-%      {Work Presented}{When}
-%      {Occasion}{}
-    \CVSubheading
-      {Photometric Filter Fidelity and Use for Be Star Identification}{November 2017}
-      {Austin College Physics Research Seminar}{}
-    \CVSubheading
-      {Reflectometry for Volumetric Soil Moisture Measurement}{May 2017}
-      {Austin College Atmospheric Physics Fair}{}
-    \CVSubheading
-      {Design and Manufacturing of Products using 3D Printing}{April 2017}
-      {Austin College Student Scholarship Conference}{}
-  \CVSubHeadingListEnd
-
-%-----HONORS AND AWARDS--------------------------------------------------------
-\section{Honors and Awards}
-  \CVSubHeadingListStart
-%    \CVSubheading %Example
-%      {What}{When}
-%      {Short Description}{}
-    \CVSubheading
-      {Dean's List}{Fall 2017}
-      {Recognition for to 20\% of students in academics at Austin College}{}
-    \CVSubheading
-      {Noyce STEM Education Leadership Scholarship}{June 2017}
-      {Merit based grant for students pursuing education in STEM fields}{}
-    \CVSubheading
-      {Stephens Scholarship}{May 2017}
-      {Merit based scholarship to support international study experiences within Austin College}{}
-    \CVSubheading
-      {John D . Mosely Scholarship}{July 2016}
-      {Merit based scholarship requiring Austin College alumnus nomination}{}
-    \CVSubheading
-      {Presidents List}{Spring 2016}
-      {Overall GPA above 3.8 at Austin College}{}
-    \CVSubheading
-      {Eagle Scout}{April 2006}
-      {Highest level of achievement within the Boy Scouts of America}{}
-  \CVSubHeadingListEnd
-
-%-----TEACHING EXPERIENCE------------------------------------------------------
-\begin{comment}
-Section is here as it applied to my application for positions in academia. 
-Remember to tailor the resume for to the position.
-\end{comment}
-
-\section{Teaching Experience}
+\section{achievements}
   \CVSubHeadingListStart
 %    \CVSubheading
-%      {What}{When}
-%      {School}{Where}
+%      {Title of Work}{When it was done}
+%      {Institution you worked with}{unused}
     \CVSubheading
-      {High School Physics (11 Weeks Teaching/Observing)}{Fall 2017}
-      {Denison High School}{Denison, TX}
-    \CVSubheading
-      {High School Calculus (11 Weeks Teaching/Observing)}{Fall 2017}
-      {Denison High School}{Denison, TX}
-    \CVSubheading
-      {High School Geometry (9 Weeks Teaching/Observing)}{Spring 2016}
-      {Sherman High School}{Sherman, TX}
+      {Google Kickstart Round G}{\emph{October 2021}}
+      {Achieved Rank 1711}{}
+  
+  \CVSubheading
+    {Codeforces Educational Round 118}{\emph{December 2021}}      
+    {Achieved Rank 2674}{} \\
   \CVSubHeadingListEnd
 
-%-----COMMUNITY INVOLVEMENT----------------------------------------------------
-\section{Community Involvement}
-  \CVSubHeadingListStart
-%    \CVSubheading %Example
-%      {What you did}{When you worked there}
-%      {Who you worked for}{Where they are located}
-    \CVSubheading
-      {Austin College Community Tutors}{Fall 2017 -- Fall 2018}
-      {Free tutoring for local students in science and mathematics}{Sherman, TX}
-    \CVSubheading
-      {River Legacy Nature Center}{September 2015 -- August 2016}
-      {Provided assistance for various youth science education programs}{Arlington, TX}
-    \CVSubheading
-      {Back on My Feet Run Club}{April 2014 -- August 2015}
-      {Helping to reestablish homeless persons in the community}{Austin, TX}
-  \CVSubHeadingListEnd
+\vspace*{3pt}
 
-%-----SKILLS-------------------------------------------------------------------
-\begin{comment}
-This section is compressed from the various skills sections that Euro CV
-recommends.
-\end{comment}
-
-\section{Skills}
+\section{skills}
  \begin{itemize}[leftmargin=0.5cm, label={}]
     \small{\item{
-     \textbf{Languages}{: English (Native), Spanish (B1), Finnish (A1)} \\
-     \textbf{Programming}{: Python (NumPy, SciPy, Matplotlib, Pandas), MATLAB, Mathematica, Java} \\
-     \textbf{Document Creation}{: Microsoft Office Suite, LaTex, Markdown} \\
+     \textbf{Languages}{: English, Hindi (Native)} \\
     }}
  \end{itemize}
-    
-%------------------------------------------------------------------------------
+ 
+ \vspace*{1pt}
+
+\section{hobbies and interests}
+     \small{ \hspace*{11pt}
+     Competitive Programming, Chess, Open Source Software, Problem Solving, Finance
+     }
+
 \end{document}
